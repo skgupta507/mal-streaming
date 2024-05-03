@@ -1,5 +1,4 @@
 import API from "./src/index.js";
-import { config } from "dotenv"; config();
 
 const port = 3000
 

@@ -2,7 +2,6 @@ import express from "express";
 import helmet from "helmet";
 import cors from "cors";
 import router from "./router.js";
-import { config } from "dotenv"; config();
 
 const API = express();
 
