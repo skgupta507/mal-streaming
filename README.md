@@ -194,5 +194,69 @@ console.log(data);
 }
 ```
 
+### Get Anime Info
+
+| Parameters | Description         | Required |
+| ---------- | ------------------- | -------- |
+| id         | anime mal id        | Yes      |
+
+`Request`
+```ts
+const data = (await axios.get("https://malstream.vercel.app/api/info/21")).data
+console.log(data);
+```
+
+`Output`
+```ts
+{
+    "id": number,
+    "url": string,
+    "title": string,
+    "cover": string,
+    "type": string,
+    "synopsis": string,
+    "status": string,
+    "score": number,
+    "season": string,
+    "year": number,
+    "genres": [string],
+    "episode": number,
+    "source": string,
+    "studios": string,
+    "producers": [string],
+    "trailer": string,
+    "episodes": [{id: string, episode: string}]
+}
+```
+
+### Get Stream Episode
+
+| Parameters | Description             | Required |
+| ---------- | ----------------------- | -------- |
+| id         | episode id of the anime | Yes      |
+
+`Request`
+```ts
+const data = (await axios.get("https://malstream.vercel.app/api/stream/one-piece-episode-1100")).data
+console.log(data);
+```
+
+`Output`
+```ts
+{
+    "id": string,
+    "title": string,
+    "episode": string,
+    "sources": { // M3u8 file source
+        "default": string,
+        "backup": string
+    },
+    "iframes": {
+        "plyr": string,
+        "nspl": string
+    }
+}
+```
+
 ## License
 This project is licensed under [GPL-3.0](LICENSE) License
