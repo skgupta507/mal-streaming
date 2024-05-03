@@ -2,7 +2,7 @@
     "name": "mal-streaming",
     "private": true,
     "description": "A free anime streaming restful API serving anime from MyAnimeList & using Gogoanime as a provider",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "type": "module",
     "scripts": {
@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "axios": "*",
+        "cheerio": "*",
         "cors": "*",
         "crypto-js": "*",
         "express": "*",

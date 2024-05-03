@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getList } from "./modules.js";
+import { getList, getInfo, getStream } from "./modules.js";
 const router = Router();
 
 router.get("/airing", async (req, res) => {
@@ -20,6 +20,16 @@ router.get("/favorite", async (req, res) => {
 router.get("/upcoming", async (req, res) => {
     const page = req.query.page || 1
     res.json(await getList("upcoming", page));
+});
+
+router.get("/info/:id", async (req, res) => {
+    const id = req.params.id
+    res.json(await getInfo(id));
+});
+
+router.get("/stream/:id", async (req, res) => {
+    const id = req.params.id
+    res.json(await getStream(id));
 });
 
 export default router
