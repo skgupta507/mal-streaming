@@ -1,0 +1,25 @@
+{
+    "name": "mal-streaming",
+    "private": true,
+    "description": "A free anime streaming restful API serving anime from MyAnimeList & using Gogoanime as a provider",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node .",
+        "dev": "nodemon ."
+    },
+    "dependencies": {
+        "axios": "*",
+        "cors": "*",
+        "crypto-js": "*",
+        "express": "*",
+        "helmet": "*"
+    },
+    "devDependencies": {
+        "nodemon": "*"
+    },
+    "author": "sckoorp",
+    "repository": "https://github.com/sckoorp/mal-streaming",
+    "license": "GPL-3.0"
+}
