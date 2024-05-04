@@ -66,7 +66,8 @@ console.log(data);
             "episodes": number,
             "source": string,
             "trailer": string
-        }
+        },
+        {...}
     ]
 }
 ```
@@ -107,7 +108,8 @@ console.log(data);
             "episodes": number,
             "source": string,
             "trailer": string
-        }
+        },
+        {...}
     ]
 }
 ```
@@ -148,7 +150,8 @@ console.log(data);
             "episodes": number,
             "source": string,
             "trailer": string
-        }
+        },
+        {...}
     ]
 }
 ```
@@ -189,7 +192,70 @@ console.log(data);
             "episodes": number,
             "source": string,
             "trailer": string
-        }
+        },
+        {...}
+    ]
+}
+```
+
+### Get Genres List
+
+`Request`
+```ts
+const data = (await axios.get("https://malstream.vercel.app/api/genres")).data
+console.log(data);
+```
+
+`Output`
+```ts
+[
+    {
+    "id": number,
+    "name": string
+    },
+    {...}
+]
+```
+
+### Get Search
+
+| Query | Description                 | Required |
+| ----- | --------------------------- | -------- |
+| query  | search query                | Yes       |
+| page  | by default page is set to 1 | No       |
+
+`Request`
+```ts
+const data = (await axios.get("https://malstream.vercel.app/api/search?query=naruto")).data
+console.log(data);
+```
+
+`Output`
+```ts
+{
+    "pagination": {
+        "total": number,
+        "current": number,
+        "next": boolean
+    },
+    "data": [
+        {
+            "id": number,
+            "url": string,
+            "title": string,
+            "cover": string,
+            "type": string,
+            "synopsis": string,
+            "status": string,
+            "score": number,
+            "season": string,
+            "year": number,
+            "genres": [string],
+            "episodes": number,
+            "source": string,
+            "trailer": string
+        },
+        {...}
     ]
 }
 ```
